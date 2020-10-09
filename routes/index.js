@@ -1,3 +1,10 @@
+/*
+File name: index.js
+Author's name: Aakriti Gupta
+Web site name: Aakriti Gupta's Express Portfolio Website
+Date: October 09, 2020
+File description: This file will help visiters to navigate within the website.
+*/
 var express = require('express');
 var router = express.Router();
 
