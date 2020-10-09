@@ -1,5 +1,5 @@
 /*Custom css goes here*/
-#body{
+#homeBody{
 
     padding: 0;
     margin: 0;
@@ -10,7 +10,6 @@
       background-position: center;
       background-repeat: repeat;
       background-size: inherit ;
-
 }
 .box{
     width: 450px;
@@ -41,5 +40,174 @@
     padding-top: 20px;
   }
   .box p{
-    text-align: justify;
+    text-align: center;
   }
+  /*Designing contact page*/
+#shortMessage{
+    scale: height 400px; width: 400px ; 
+    }
+#contactBody{
+     background-image: url(/Assets/images/design.jpg); 
+     background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: white;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    }
+    #contactHeading{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    }
+    /*Adding style for the submit and reset buttons */
+    .btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+    .btn:hover {
+      opacity: 1;
+    }
+    #navbar
+    {   
+        background-color: rgba(192, 215, 228, 0.986);
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+    }
+    #bottomNav
+    {
+        color: white;
+    }
+   
+/* Design for About Me page*/
+    #aboutBody
+    {
+        background-image: url(/Assets/images/bg2.jpg); 
+        color:ivory;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: justify;
+    }
+    #aboutHeader
+    {
+        text-align: center;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    }
+    #myImage
+    {
+        border-radius: 50%;
+        padding-left: 50px;
+    }
+
+    /*Designing Project Page*/
+     /* Centers and scales the image */
+  #projectBody
+  {   
+  background-image: url(/Assets/images/bg3.jpg) ;
+    padding: 0;
+    margin:0;
+    height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover ;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  text-orientation: upright;
+  
+  }
+#projectHeading {
+  font-size: 40px;
+padding-top: 20px;
+  color: black; 
+}
+#projectDescription{
+  font-size: 20px;
+  padding-top: 20px;
+    color: black;
+
+}
+
+/* Center of the website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 8px -16px;
+}
+
+/* Adds padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Creates four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 30%;
+}
+
+/* Clears floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content on the webpage*/
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+/* Responsive layout - makes a two column-layout */
+@media screen and (max-width: 900px) {
+  .column {
+    width: 50%;
+  }
+}
+
+/*Designing services page*/
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 33.33%;
+    padding: 5px;
+  }
+  #servicesBody
+  {
+    background-image: url(/Assets/images/bg4.jpg) ;
+    padding: 0;
+    margin:0;
+    height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover ;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-orientation: upright;
+  color:white;
+  }
+  #servicesHeading {
+    font-size: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+    text-align: center;
+  }   
+
+
+
+
+    

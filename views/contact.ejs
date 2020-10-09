@@ -1,0 +1,47 @@
+<%- include partials/header.ejs %>
+<%- include partials/main_nav.ejs %>
+<body id="contactBody">
+     <main>
+            <div class="container">          
+                    <h2 class="display-9" id="contactHeading">Tell Me About Yourself!</h2>          
+                    <form action="/home">
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="firstName"><i class="fas fa-file-signature"></i>First Name</label>
+                            <input type="text" class="form-control" id="firstName" aria-describedby="firstName" 
+                            placeholder="Enter your first name" required autofocus>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="lastName"><i class="fas fa-file-signature"></i>Last Name</label>
+                            <input type="text" class="form-control" id="lastName" aria-describedby="lastName"
+                            placeholder="Enter your last name" required>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="emailAddress" ><i class="fas fa-envelope"></i>Email</label>
+                          <input type="email" class="form-control" id="emailAddress" aria-describedby="emailAddress"
+                          placeholder="johngregory@abc.ca" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="contactNumber"><i class="fas fa-mobile-alt"></i>Contact Number</label>
+                          <input type="tel" class="form-control" id="contactNumber" aria-describedby="contactNumber"
+                          placeholder="123-456-7890">
+                        </div>
+                        <div class="form-group">
+                       <label for="shortMessage"><i class="far fa-comments"></i>Your valuable comments 
+                        <textarea id="shortMessage" class="form-control" aria-describedby="shortMessage"
+                        placeholder="Write something.." ></textarea></label>
+                      </div>
+                      <div class="form-group">
+                      <label><button action="/home" id="submitButton" type="submit" class="btn btn-outline-primary" ><i class="far fa-paper-plane"></i> Send</button></label>
+                      <label><button id="resetButton" type="reset" class="btn btn-outline-warning" ><i class="far fa-trash-alt"></i>Reset</button></label>
+                      </form>
+                       </div>                   
+                    
+                    </div>
+            </div>
+        </main>
+    </body>
+    <p id="contactId">Email Me: <a href="mailto:draakritig@gmail.com">draakritig@gmail.com</a></p>
+<%- include partials/bottom_nav.ejs %> 
+<%- include partials/footer.ejs %> 

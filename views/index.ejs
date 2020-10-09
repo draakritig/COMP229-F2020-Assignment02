@@ -1,18 +1,19 @@
 <%- include partials/header.ejs %>
 <%- include partials/main_nav.ejs %>
- 
-<body id="body">
-  <!--Main Content-->
-     <main>  
-          <h1 id="welcomeMessage"> Welcome To My Page</h1>
-          <div class="box">
-            <img src="/Assets/images/myPic.jpeg" alt="My picture" class="box-img">
-            <h1 id="myName">I am Aakriti Gupta</h1>           
-            <p id="biographyText">I am a 3rd Semester student of Health Informatics Technology at Centennial College.</p>  
-            </div>          
-        </main>
-</body>
-  
+
+ <% if (title == "Home") { %>
+      <%- include partials/home_content.ejs %>
+        <% } %>
+ <% if (title == "About") { %>
+      <%- include partials/about_content.ejs %>
+        <% } %>
+ <% if (title == "Projects") { %>
+      <%- include partials/projects_content.ejs %>
+        <% } %>
+  <% if (title == "Services") { %>
+      <%- include partials/services_content.ejs %>
+        <% } %>
+        
 <%- include partials/bottom_nav.ejs %> 
 <%- include partials/footer.ejs %> 
 
