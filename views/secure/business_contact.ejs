@@ -1,0 +1,46 @@
+<%- include('../partials/header.ejs') -%>
+<%- include('../partials/main_nav.ejs')-%>
+
+    <main class="container">
+    <h2 class="display-9" id="contactHeading" class="text-center">Business Contact List</h2>
+    </a>
+        <div class="row">            
+            <div class="offset-md-1 col-md-10">  
+                <table class="table table-striped table-bordered">
+                    <thead class="blue table-dark">
+                        <tr>
+                            <th scope="col 1" class="text-center">Name</th>
+                            <th scope="col 1" class="text-center">Contact Number</th>
+                            <th scope="col" class="text-center">Email</th> 
+                            <th scope="col 1" class="text-center"></th>  
+                            <th scope="col 1" class="text-center"></th>   
+                        </tr>
+                    </thead>
+                    <tbody>
+              
+        </div>
+        </div>
+        </main>
+        <!-- Repeatable Template Row-->
+
+        <% for(let count =0; count < ContactList.length; count++) { %>
+            <tr>
+               <td class="text-center"><%=ContactList[count].name %></td>
+               <td class="text-center"><%=ContactList[count].number %></td>
+               <td class="text-center"><%=ContactList[count].email %></td>
+               <td scope="col" class="text-center">
+                   <a href="/business-list/update/<%=ContactList[count]._id %>" class="btn btn-primary btn-sm">
+                <i class="fas fa-pencil-alt"></i> Update</a>
+               </td>  
+                <td scope="col" class="text-center">
+                    <a href="/business-list/delete<%=ContactList[count]._id %>" class="btn btn-danger btn-sm">
+                    <i class="fas fa-trash-alt"></i> Delete</a>
+                </td>  
+            </tr>
+
+       <% } %>
+
+
+<%- include('../partials/bottom_nav.ejs')-%>
+<%- include('../partials/footer.ejs') -%>
+
