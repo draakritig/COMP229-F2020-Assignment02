@@ -5,37 +5,36 @@ Web site name: Aakriti Gupta's Express Portfolio Website
 Date: October 09, 2020
 File description: This file will help visiters to navigate within the website.
 */
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
+
+let indexController = require('../controllers/index');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home',});
-});
+router.get('/', indexController.displayHomePage);
 
 /* GET home page. */
-router.get('/home', function(req, res, next) {
-  res.render('index', { title: 'Home',});
-});
+router.get('/home', indexController.displayHomePage);
 
 /* GET About Us page. */
-router.get('/about', function(req, res, next) {
-  res.render('index', { title: 'About',});
-});
+router.get('/about', indexController.displayAboutPage);
 
 /* GET Products page. */
-router.get('/projects', function(req, res, next) {
-  res.render('index', { title: 'Projects',});
-});
+router.get('/projects', indexController.displayProjectsPage);
 
 /* GET Services page. */
-router.get('/services', function(req, res, next) {
-  res.render('index', { title: 'Services',});
-});
+router.get('/services', indexController.displayServicesPage);
 
 /* GET Contact Us page. */
-router.get('/contact', function(req, res, next) {
-  res.render('contact', { title: 'Contact',});
-});
+router.get('/contact', indexController.displayContactPage);
+
+/* GET Route for displaying the Login page */
+router.get('/login', indexController.displayLoginPage);
+
+/* POST Route for processing the Login page */
+router.post('/login', indexController.processLoginPage);
+
+/* GET to perform UserLogout */
+router.get('/logout', indexController.performLogout);
 
 module.exports = router;

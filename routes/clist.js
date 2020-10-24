@@ -2,84 +2,31 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
-// connect to contact model
-let List = require('../models/contacts');
+let passport = require('passport');
 
+// Helper function for guard purposes
+function requireAuth(req, res, next)
+{
+    // check if user is logged in
+    if(!req.isAuthenticated())
+    {
+        return res.redirect('/login');
+    }
+    next();
+}
+
+let listController = require('../controllers/clist')
 /*GET Route for the contact list page- Read Operation*/
-router.get('/', (req, res, next) => {
-    List.find((err, contactList) =>{
-        if(err)
-        {
-            return console.error(err);
-        }
-        else
-        {
-            //console.log(ContactList);
-            res.render('./secure/business_contact', {title: 'Business Contacts', ContactList: contactList});
-        }
-    });
+router.get('/', requireAuth, listController.displayContactList);
 
-});
+/*GET Route for displaying Update page- Update Operation*/
+router.get('/update/:id', requireAuth, listController.displayUpdatePage);
 
-
-/*GET Route for displaying Edit page- Update Operation*/
-router.get('/update/:id',(req, res, next) => {
-    let id = req.params.id;
-    List.findById(id,(err, listUpdate) => {
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else
-        {
-            // show the edit view
-            res.render('./secure/update',{title: 'Update List',conList: listUpdate});
-        }
-    });
-
-});
-
-/*POST Route for processing Edit page- Update Operation*/
-router.post('/update/:id',(req, res, next) => {
-    let id = req.params.id;
-    let updateList = List({
-        "_id": id,
-        "name": req.body.name,
-        "number": req.body.number,
-        "email": req.body.email
-    });
-    List.updateOne({_id: id}, updateList, (err) => {
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else
-        {
-            //refresh the contact list
-            res.redirect('/business-list');
-        }
-    });
-
-});
+/*POST Route for processing Update page- Update Operation*/
+router.post('/update/:id', requireAuth, listController.processUpdatePage);
 
 /*GET Route to perform Deletion- Delete Operation*/
-router.get('/delete/:id',(req, res, next) => {
-    let id = req.params.id;
+router.get('/delete/:id', requireAuth, listController.performDelete);
 
-    List.remove({_id: id}, (err) => {
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        } 
-        else
-        {
-             //refresh the contact list
-             res.redirect('/business-list');
-        }
-    });
-});
 module.exports = router;
 

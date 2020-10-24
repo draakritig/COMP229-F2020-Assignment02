@@ -3,43 +3,51 @@
 
 <!--Content for Update Page-->
     <div class="container">
-    <div class="row">
+     <div class="row">
         <div class="offset-md-3 col-md-6">
         <h1>Update List</h1>
-
             <form class="form" method="POST">
                 <div class="form-group">
                     <label for=""> Name </label>
-                    <input type="text" class="form-control"
+                    <input type="text" 
+                    name="name"
+                    class="form-control"
                     id="nameTextField"
-                    placeholder="Enter the name" required>
+                    placeholder="Enter the name" 
+                    value="<%= conList.name %>"
+                    required>
                 </div>
 
                 <div class="form-group">
                     <label for="">Contact Number </label>
-                    <input type="text" class="form-control"
+                    <input type="text" class="form-control" 
+                    name="number"
                     id="numberTextField"
-                    placeholder="1234567890" required>
+                    placeholder="1234567890" 
+                    value="<%= conList.number %>"
+                    required>
                 </div>
 
                 <div class="form-group">
                     <label for="">Email Id </label>
                     <input type="text" class="form-control"
                     id="emailTextField"
-                    placeholder="xyz@gmail.com" required>
+                    name="email"
+                    placeholder="xyz@gmail.com" 
+                    value="<%= conList.email %>"
+                    required>
                 </div>
 
-                <button class="btn btn-primary" type="submit">
+                <label><button class="btn btn-primary" type="submit">
                     <i class="fas fa-edit"> Submit</i>
-                </button>
-        
-                    <a href="/business-list" class="btn btn-warning">
-                    <i class="fas fa-undo"></i> Cancel</a>
+                </button></label>
+                 <label><a href="/business-list" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> Cancel</a></label>
                 
             </form>
-            </div>
-    </div>
-    </div>
+        </div>
+     </div>
+ </div>
 
 
 
