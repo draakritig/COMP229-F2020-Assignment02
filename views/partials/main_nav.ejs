@@ -2,8 +2,8 @@
 File name: main_nav.ejs
 Author's name: Aakriti Gupta
 Student ID: 301103413
-Date: October 09, 2020
-Web site name: Aakriti Gupta's Express Portfolio Website
+Date: October 24, 2020
+Web site name: Aakriti Gupta's Express Portfolio Website with Authentication
 File description: This section contains contents for main navigation.
 -->
  <!--Main Navigation-->
@@ -66,6 +66,15 @@ File description: This section contains contents for main navigation.
         <% } %>
           <a class="nav-link" href="/contact"><i class="fas fa-mobile-alt"></i> Contact </a>
         </li>
+
+      <% if(typeof displayName == 'string' && displayName) { %>
+      <li class="navbar-text"><i class="fas fa-lg fa user"></i> Hello, <%= displayName %></li>
+      <li class="nav-item"><a href="/logout" class="nav-link">
+        <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+      <% } else { %>
+        <li class="nav-item"><a href="/login" class="nav-link">
+          <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+      <% } %>
 
       
         

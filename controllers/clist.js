@@ -15,7 +15,15 @@ module.exports.displayContactList = (req, res, next) =>
         else
         {
             //console.log(ContactList);
-            res.render('./secure/business_contact', {title: 'Business Contacts', ContactList: contactList});
+            res.render('./secure/business_contact', 
+            {
+                title: 'Business Contacts', 
+                ContactList: contactList.sort((a,b) =>{
+                    let nameSorting = [a.name, b.name].sort();
+                    return nameSorting[0] == a.name ? -1 : 1;
+                }),
+                displayName: req.user ? req.user.displayName: ''
+            });
         }
     });
 
@@ -33,7 +41,8 @@ module.exports.displayUpdatePage = (req, res, next) =>
         else
         {
             // show the update view
-            res.render('./secure/update',{title: 'Update List',conList: listUpdate});
+            res.render('./secure/update',{title: 'Update List',conList: listUpdate,
+            displayName: req.user ? req.user.displayName: ''});
         }
     });
 

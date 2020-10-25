@@ -57,9 +57,6 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-// passport user configuration
-
-
 // create a User Model Instance
 let userModel = require('../models/user.js');
 let User = userModel.User;
@@ -70,6 +67,13 @@ passport.use(User.createStrategy());
 // serialize and deserialize the User info
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+/*User.register(new User({
+  username: 'peteredison71',
+  email: 'pedison@cmail.com',
+  displayName: 'Peter'
+}), 'edison71');
+*/
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
